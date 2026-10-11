@@ -1,3 +1,4 @@
+
 export type LocalAiServiceConfig = {
   baseUrl: string;
   token: string;
@@ -6,12 +7,30 @@ export type LocalAiServiceConfig = {
 export function getLocalAiServiceConfig(): LocalAiServiceConfig | null {
   const configuredUrl = process.env.AI_SERVICE_URL;
   const token = process.env.AI_SERVICE_TOKEN;
+
   if (!configuredUrl || !token) return null;
 
   try {
     const url = new URL(configuredUrl);
-    const allowedHosts = new Set(["127.0.0.1", "localhost", "[::1]"]);
-    if (url.protocol !== "http:" || !allowedHosts.has(url.hostname) || url.username || url.password) return null;
+    const isLocal =
+      url.protocol === "http:" &&
+      ["127.0.0.1", "localhost", "[::1]"].includes(url.hostname);
+
+    const isProductionService =
+      url.protocol === "https:" &&
+      url.hostname === "bytexl-cy1d.onrender.com";
+
+    if (
+      (!isLocal && !isProductionService) ||
+      url.username ||
+      url.password ||
+      url.pathname !== "/" ||
+      url.search ||
+      url.hash
+    ) {
+      return null;
+    }
+
     return { baseUrl: url.origin, token };
   } catch {
     return null;

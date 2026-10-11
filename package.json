@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@napi-rs/canvas": "^1.0.11",
+    "@neon/config": "^1.8.6",
+    "@neon/env": "^1.5.3",
     "@react-three/drei": "^10.7.9",
     "@react-three/fiber": "^9.8.1",
     "@types/bcryptjs": "^2.4.6",
@@ -51,12 +53,17 @@
     "@types/pg": "8.18.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "drizzle-kit": "0.31.10",
+    "drizzle-kit": "^0.31.11",
     "eslint": "9.39.4",
     "eslint-config-next": "^16.4.0",
     "postcss": "^8.5.23",
     "tailwindcss": "4.1.17",
     "typescript": "5.9.3",
     "vitest": "^5.0.3"
+  },
+  "allowScripts": {
+    "esbuild@0.18.20": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true
   }
 }

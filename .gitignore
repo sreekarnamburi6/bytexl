@@ -31,3 +31,4 @@ data/uploads/
 !.env.example
 __pycache__/
 *.pyc
+.neon

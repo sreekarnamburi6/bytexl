@@ -1,0 +1,83 @@
+{
+  "pneumonia": {
+    "name": "Pneumonia image classifier",
+    "disease": "Pneumonia",
+    "modality": "Chest X-ray",
+    "file": "pneumonia.h5",
+    "labels": ["Normal", "Pneumonia Detected"],
+    "output": "binary_sigmoid",
+    "preprocessing": "zero_to_one",
+    "enabled": true
+  },
+  "tuberculosis": {
+    "name": "Tuberculosis image classifier",
+    "disease": "Tuberculosis",
+    "modality": "Chest X-ray",
+    "file": "tuberculosis.h5",
+    "labels": ["Normal", "Tuberculosis Detected"],
+    "output": "binary_sigmoid",
+    "preprocessing": "zero_to_one",
+    "enabled": true
+  },
+  "brain_tumor": {
+    "name": "Brain tumor image classifier",
+    "disease": "Brain tumor",
+    "modality": "Brain MRI",
+    "file": "brain_tumor.h5",
+    "labels": ["No Tumor", "Glioma", "Meningioma", "Pituitary Tumor"],
+    "output": "multiclass_softmax",
+    "preprocessing": "zero_to_one",
+    "enabled": true
+  },
+  "retinopathy": {
+    "name": "Diabetic retinopathy image classifier",
+    "disease": "Diabetic retinopathy",
+    "modality": "Retinal fundus image",
+    "file": "retinopathy.h5",
+    "labels": ["No DR", "Mild", "Moderate", "Severe", "Proliferative DR"],
+    "output": "multiclass_softmax",
+    "preprocessing": "model_internal_0_to_255",
+    "enabled": true
+  },
+  "glaucoma": {
+    "name": "Glaucoma image classifier",
+    "disease": "Glaucoma",
+    "modality": "Retinal fundus image",
+    "file": "glaucoma.h5",
+    "labels": ["Normal", "Glaucoma Detected"],
+    "output": "binary_sigmoid",
+    "preprocessing": "zero_to_one",
+    "enabled": true
+  },
+  "kidney_stone": {
+    "name": "Kidney stone image classifier",
+    "disease": "Kidney stone",
+    "modality": "Ultrasound image",
+    "file": "kidney_stone.h5",
+    "labels": ["Normal", "Kidney Stone Detected"],
+    "output": "binary_sigmoid",
+    "preprocessing": "zero_to_one",
+    "enabled": true
+  },
+  "malaria": {
+    "name": "Malaria blood-smear image classifier",
+    "disease": "Malaria",
+    "modality": "Blood smear image",
+    "file": "malaria.h5",
+    "labels": ["Uninfected", "Parasitized"],
+    "output": "binary_sigmoid",
+    "preprocessing": "zero_to_one",
+    "enabled": true
+  },
+  "skin_cancer": {
+    "name": "Skin-lesion image classifier",
+    "disease": "Skin lesion",
+    "modality": "Skin lesion image",
+    "file": "skin_cancer.h5",
+    "labels": [],
+    "output": "multiclass_softmax",
+    "preprocessing": "zero_to_one",
+    "enabled": false,
+    "disabled_reason": "The model has seven output classes but the supplied registry only identifies two. A verified seven-class label map is required."
+  }
+}

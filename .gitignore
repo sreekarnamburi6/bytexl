@@ -1,0 +1,33 @@
+node_modules/
+.next/
+data/
+ai_service/.venv/
+ai_service/**/__pycache__/
+ai_service/**/*.pyc
+.env
+.env.*
+!.env.example
+# Dependencies and generated files
+node_modules/
+.next/
+.next.zip
+coverage/
+*.tsbuildinfo
+
+# Uploaded user data
+data/uploads/
+
+# Python cache
+__pycache__/
+*.pyc
+node_modules/
+.next/
+.next.zip
+coverage/
+*.tsbuildinfo
+data/uploads/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc

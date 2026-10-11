@@ -1,0 +1,1 @@
+"""Shared image and text utilities for the local model service."""

@@ -1,0 +1,1 @@
+"""Local, private disease-image model service for MEDISCOPE AI."""

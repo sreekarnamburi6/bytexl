@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791651907192,
+      "tag": "0000_document_provenance",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791653502583,
+      "tag": "0001_mark_legacy_analyses",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791655700000,
+      "tag": "0002_model_inference_records",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,4 +1,3 @@
-import { PDFParse } from "pdf-parse";
 import { createWorker } from "tesseract.js";
 
 export type ExtractionMethod = "pdf-text" | "tesseract-ocr" | "no-text-found" | "ocr-unavailable";
@@ -42,7 +41,9 @@ export function extractMedicalFields(text: string): ExtractedField[] {
 }
 
 async function readPdfText(buffer: Buffer): Promise<string> {
+  const { PDFParse } = await import("pdf-parse");
   const parser = new PDFParse({ data: buffer });
+
   try {
     const result = await parser.getText();
     return result.text.trim();
@@ -62,6 +63,7 @@ async function recognizeImage(buffer: Buffer, language: "eng" | "tel" | "hin"): 
 }
 
 async function recognizePdfPages(buffer: Buffer, language: "eng" | "tel" | "hin") {
+  const { PDFParse } = await import("pdf-parse");
   const parser = new PDFParse({ data: buffer });
   let worker: Awaited<ReturnType<typeof createWorker>> | undefined;
   const text: string[] = [];

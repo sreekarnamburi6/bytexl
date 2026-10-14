@@ -18,7 +18,7 @@ export function getLocalAiServiceConfig(): LocalAiServiceConfig | null {
 
     const isProductionService =
       url.protocol === "https:" &&
-      url.hostname === "bytexl-cy1d.onrender.com";
+      url.hostname === "mediscope-ai-service.onrender.com";
 
     if (
       (!isLocal && !isProductionService) ||
